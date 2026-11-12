@@ -40,6 +40,7 @@ input,select,textarea{font:inherit}
 .vs-link{color:#F3D9B8}.vs-link:hover{color:#FFFFFF}
 @media (max-width:700px){.vs{background-image:linear-gradient(180deg,rgba(28,18,12,.55) 0%,rgba(28,18,12,.9) 55%),url("storefront.jpg"),linear-gradient(135deg,#9C7350,#C9A27E 60%,#E3C7A3)}.vs-photo-note{top:16px;bottom:auto}}
 @media (prefers-reduced-motion:reduce){.cr-track{scroll-behavior:auto}.cr-card{transition:none}}
+input:user-invalid,select:user-invalid{border-color:#E07A5F!important;box-shadow:0 0 0 2px rgba(224,122,95,.35)}
 </style>
 </head>
 <body>
@@ -206,12 +207,12 @@ input,select,textarea{font:inherit}
 <div id="thanks" hidden style="background: #4E3A2D; border-radius: 16px; padding: 28px; font-size: 17px">Thank you! We received your inquiry and will message you soon.</div>
 
 <form id="inq" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Your name<input type="text" placeholder="Juan Dela Cruz" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Mobile or email<input type="text" placeholder="0917 000 0000" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Event date<input type="date" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Number of guests<input type="number" placeholder="100" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Event type<select style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"><option>Wedding</option><option>Birthday</option><option>Corporate event</option><option>Other</option></select></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Venue<input type="text" placeholder="City or venue name" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Your name<input type="text" name="name" required maxlength="80" autocomplete="name" placeholder="Juan Dela Cruz" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Mobile or email<input type="text" name="contact" id="fContact" required maxlength="80" autocomplete="tel" placeholder="0917 000 0000 or you@email.com" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Event date<input type="date" name="date" id="fDate" required style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Number of guests<input type="number" name="guests" id="fGuests" required min="10" max="2000" step="1" inputmode="numeric" placeholder="100" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Event type<select name="type" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"><option>Wedding</option><option>Birthday</option><option>Corporate event</option><option>Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Venue<input type="text" name="venue" required maxlength="120" placeholder="City or venue name" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #8C735F; background: #FBF6EF; color: #3B2A20; min-height: 44px; box-sizing: border-box"></label>
 <div style="grid-column: 1 / -1">
 <button type="submit" style="background: #E9C9A4; color: #2E2018; border: none; border-radius: 999px; padding: 14px 26px; font-weight: 600; font-size: 16px; min-height: 44px; cursor: pointer">Send inquiry</button>
 </div>
@@ -246,6 +247,21 @@ input,select,textarea{font:inherit}
 </div>
 </footer>
 </div>
+<script>
+(function(){var f=document.getElementById('inq'),d=document.getElementById('fDate'),g=document.getElementById('fGuests'),c=document.getElementById('fContact');
+function iso(x){return x.toISOString().slice(0,10)}
+var t=new Date();t.setMinutes(t.getMinutes()-t.getTimezoneOffset());var mx=new Date(t);mx.setFullYear(mx.getFullYear()+2);
+d.min=iso(t);d.max=iso(mx);
+function chkDate(){d.setCustomValidity('');if(!d.value)return;if(d.value<d.min)d.setCustomValidity('Please choose a date from today onwards.');else if(d.value>d.max)d.setCustomValidity('Please choose a date within the next 2 years.')}
+function chkGuests(){g.setCustomValidity('');if(g.value==='')return;var n=Number(g.value);if(!Number.isInteger(n))g.setCustomValidity('Please enter a whole number of guests.');else if(n<10)g.setCustomValidity('Our coffee cart serves events of at least 10 guests.');else if(n>2000)g.setCustomValidity('For events over 2,000 guests, please message us directly.')}
+function chkContact(){c.setCustomValidity('');var v=c.value.trim();if(!v)return;var email=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),phone=/^(\+?63|0)9\d{9}$/.test(v.replace(/[\s-]/g,''));if(!email&&!phone)c.setCustomValidity('Enter a PH mobile number (e.g. 0917 123 4567) or an email address.')}
+g.addEventListener('keydown',function(e){if(['-','+','e','E','.',','].indexOf(e.key)>-1)e.preventDefault()});
+g.addEventListener('paste',function(e){var v=(e.clipboardData||window.clipboardData).getData('text');if(!/^\d+$/.test(v.trim()))e.preventDefault()});
+d.addEventListener('input',chkDate);d.addEventListener('change',chkDate);d.addEventListener('blur',chkDate);
+g.addEventListener('input',chkGuests);c.addEventListener('input',chkContact);
+f.addEventListener('submit',function(e){chkDate();chkGuests();chkContact();if(!f.checkValidity()){e.preventDefault();e.stopImmediatePropagation();f.reportValidity()}},true);
+})();
+</script>
 <script>
 document.getElementById('inq').addEventListener('submit',function(e){e.preventDefault();this.hidden=true;document.getElementById('thanks').hidden=false;});
 </script>
