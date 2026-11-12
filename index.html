@@ -14,6 +14,33 @@ a{color:#7A4B2E}a:hover{color:#5A3520}
 input,select,textarea{font:inherit}
 </style>
 <style>html{scroll-behavior:smooth}@media (max-width:600px){h1{font-size:36px!important}}[hidden]{display:none!important}</style>
+<style>
+.cr-nav{display:flex;gap:10px}
+.cr-btn{width:48px;height:48px;border-radius:999px;border:1.5px solid #3B2A20;background:#FFFDF9;color:#3B2A20;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s}
+.cr-btn:hover{background:#3B2A20;color:#FFFFFF}.cr-btn:disabled{opacity:.35;cursor:default;background:#FFFDF9;color:#3B2A20}
+.cr-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cr-track::-webkit-scrollbar{display:none}
+.cr-track:focus-visible{outline:2px solid #7A4B2E;outline-offset:4px;border-radius:12px}
+.cr-card{flex:0 0 min(320px,82%);scroll-snap-align:start;background:#FFFDF9;border:1px solid #EADBC8;border-radius:20px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.cr-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(59,42,32,.14)}
+.cr-img{height:200px;background:linear-gradient(135deg,#E8D3BA,#D2B08C);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;box-sizing:border-box;color:#5A3A24;font-size:14px}
+.cr-body{padding:20px 22px 24px}
+.cr-body h3{margin:10px 0 4px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:21px;color:#2E2018}
+.cr-body p{margin:6px 0 0;font-size:15px;color:#5A4637}
+.cr-tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:#3B2A20;color:#F6EBDD}
+.cr-tag.pkg{background:#F3E7D8;color:#5A3520}
+.cr-price{font-size:26px;font-weight:600;color:#7A4B2E}
+.cr-dots{display:flex;justify-content:center;gap:4px;margin-top:14px}
+.cr-dot{width:28px;height:28px;border:none;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.cr-dot::after{content:"";width:9px;height:9px;border-radius:999px;background:#D7C2AA;transition:all .25s}
+.cr-dot.on::after{width:26px;background:#7A4B2E}
+.vs{position:relative;color:#FFFFFF;background-color:#6B4A33;background-image:linear-gradient(90deg,rgba(28,18,12,.94) 0%,rgba(28,18,12,.82) 38%,rgba(28,18,12,.25) 72%,rgba(28,18,12,0) 100%),url("storefront.jpg"),linear-gradient(135deg,#9C7350,#C9A27E 60%,#E3C7A3);background-size:cover;background-position:center}
+.vs-photo-note{position:absolute;right:24px;bottom:20px;font-size:13px;color:#2E2018;background:rgba(255,253,249,.75);padding:6px 12px;border-radius:999px}
+.vs-chip{background:rgba(255,255,255,.14);color:#FFFFFF;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+.vs-link{color:#F3D9B8}.vs-link:hover{color:#FFFFFF}
+@media (max-width:700px){.vs{background-image:linear-gradient(180deg,rgba(28,18,12,.55) 0%,rgba(28,18,12,.9) 55%),url("storefront.jpg"),linear-gradient(135deg,#9C7350,#C9A27E 60%,#E3C7A3)}.vs-photo-note{top:16px;bottom:auto}}
+@media (prefers-reduced-motion:reduce){.cr-track{scroll-behavior:auto}.cr-card{transition:none}}
+</style>
 </head>
 <body>
 <div style="font-family: Inter, system-ui, sans-serif; color: #3B2A20; background: #FBF6EF; width: 100%; line-height: 1.6">
@@ -132,52 +159,42 @@ input,select,textarea{font:inherit}
 
 <!-- Coffee cart -->
 <section id="cart">
-<div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 44px; align-items: flex-start">
-<div style="flex: 1 1 380px; min-width: 0">
+<div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 64px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 28px">
+<div style="max-width: 620px">
 <p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #7A4B2E">Coffee cart services</p>
-<h2 style="margin: 0 0 14px; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 36px; line-height: 1.15; color: #2E2018">Bring The Cafénilia to your celebration</h2>
-<p style="margin: 0 0 22px; font-size: 17px; color: #5A4637">Weddings, birthdays, corporate events and parties — we set up our coffee cart and serve your guests freshly made drinks, so you can enjoy the moment.</p>
-<div style="display: flex; flex-direction: column; gap: 12px">
-
-<div style="display: flex; gap: 12px; align-items: flex-start">
-<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 3px"><circle cx="11" cy="11" r="10" fill="#F3E7D8"></circle><path d="M6.5 11.2l3 3 6-6.4" fill="none" stroke="#7A4B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<span style="font-size: 16px">Served at weddings, including our first luxury wedding event</span>
+<h2 style="margin: 0 0 12px; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 36px; line-height: 1.15; color: #2E2018">Bring The Cafénilia to your celebration</h2>
+<p style="margin: 0; font-size: 17px; color: #5A4637">Weddings, birthdays, corporate events and parties — we set up our coffee cart and serve your guests freshly made drinks, so you can enjoy the moment.</p>
 </div>
-
-<div style="display: flex; gap: 12px; align-items: flex-start">
-<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 3px"><circle cx="11" cy="11" r="10" fill="#F3E7D8"></circle><path d="M6.5 11.2l3 3 6-6.4" fill="none" stroke="#7A4B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<span style="font-size: 16px">Catered a 150-guest birthday celebration at Quezon City Sports Club</span>
-</div>
-
-<div style="display: flex; gap: 12px; align-items: flex-start">
-<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex: none; margin-top: 3px"><circle cx="11" cy="11" r="10" fill="#F3E7D8"></circle><path d="M6.5 11.2l3 3 6-6.4" fill="none" stroke="#7A4B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<span style="font-size: 16px">Freshly made coffee, matcha and specialty drinks for every guest</span>
-</div>
-
+<div class="cr-nav">
+<button type="button" class="cr-btn" id="crPrev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button type="button" class="cr-btn" id="crNext" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </div>
 </div>
-<div style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
-
-<div style="background: #FFFDF9; border: 1px solid #EADBC8; border-radius: 18px; padding: 22px">
-<div style="font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 20px; color: #2E2018">[Package 1]</div>
-<div style="font-size: 26px; font-weight: 600; color: #7A4B2E; margin: 6px 0">₱[ ]</div>
-<div style="font-size: 15px; color: #5A4637">Up to [X] cups · [X] drink choices · [X] hours</div>
+<div class="cr-track" id="crTrack" tabindex="0" aria-roledescription="carousel" aria-label="Coffee cart highlights and packages">
+<article class="cr-card" aria-roledescription="slide" aria-label="1 of 5">
+<div class="cr-img"><span>[Photo: wedding coffee cart]</span></div>
+<div class="cr-body"><span class="cr-tag">Event highlight</span><h3>Our first wedding</h3><p>Coffee cart service at an elegant wedding celebration — fresh drinks for every guest.</p></div>
+</article>
+<article class="cr-card" aria-roledescription="slide" aria-label="2 of 5">
+<div class="cr-img"><span>[Photo: birthday event]</span></div>
+<div class="cr-body"><span class="cr-tag">Event highlight</span><h3>150 guests, one disco party</h3><p>A surprise 60th birthday at Quezon City Sports Club, with coffee love in every cup.</p></div>
+</article>
+<article class="cr-card" aria-roledescription="slide" aria-label="3 of 5">
+<div class="cr-img"><span>[Photo: package 1 setup]</span></div>
+<div class="cr-body"><span class="cr-tag pkg">Package</span><h3>[Package 1]</h3><div class="cr-price">₱[ ]</div><p>Up to [X] cups · [X] drink choices · [X] hours</p></div>
+</article>
+<article class="cr-card" aria-roledescription="slide" aria-label="4 of 5">
+<div class="cr-img"><span>[Photo: package 2 setup]</span></div>
+<div class="cr-body"><span class="cr-tag pkg">Package</span><h3>[Package 2]</h3><div class="cr-price">₱[ ]</div><p>Up to [X] cups · [X] drink choices · [X] hours</p></div>
+</article>
+<article class="cr-card" aria-roledescription="slide" aria-label="5 of 5">
+<div class="cr-img"><span>[Photo: package 3 setup]</span></div>
+<div class="cr-body"><span class="cr-tag pkg">Package</span><h3>[Package 3]</h3><div class="cr-price">₱[ ]</div><p>Up to [X] cups · full menu · [X] hours</p></div>
+</article>
 </div>
-
-<div style="background: #FFFDF9; border: 1px solid #EADBC8; border-radius: 18px; padding: 22px">
-<div style="font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 20px; color: #2E2018">[Package 2]</div>
-<div style="font-size: 26px; font-weight: 600; color: #7A4B2E; margin: 6px 0">₱[ ]</div>
-<div style="font-size: 15px; color: #5A4637">Up to [X] cups · [X] drink choices · [X] hours</div>
-</div>
-
-<div style="background: #FFFDF9; border: 1px solid #EADBC8; border-radius: 18px; padding: 22px">
-<div style="font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 20px; color: #2E2018">[Package 3]</div>
-<div style="font-size: 26px; font-weight: 600; color: #7A4B2E; margin: 6px 0">₱[ ]</div>
-<div style="font-size: 15px; color: #5A4637">Up to [X] cups · full menu · [X] hours</div>
-</div>
-
-<div style="border-radius: 18px; background: #E8D3BA; border: 2px dashed #B98E68; min-height: 170px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; box-sizing: border-box; color: #6B4A33; font-size: 14px">[Photo: coffee cart at an event]</div>
-</div>
+<div class="cr-dots" id="crDots"><button type="button" class="cr-dot" aria-label="Go to slide 1"></button><button type="button" class="cr-dot" aria-label="Go to slide 2"></button><button type="button" class="cr-dot" aria-label="Go to slide 3"></button><button type="button" class="cr-dot" aria-label="Go to slide 4"></button><button type="button" class="cr-dot" aria-label="Go to slide 5"></button></div>
+<div style="text-align: center; margin-top: 26px"><a href="#book" style="background: #7A4B2E; color: #FFFFFF; text-decoration: none; padding: 14px 26px; border-radius: 999px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Check your date</a></div>
 </div>
 </section>
 
@@ -204,32 +221,21 @@ input,select,textarea{font:inherit}
 </section>
 
 <!-- Visit -->
-<section id="visit">
-<div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 40px">
-<div style="flex: 1 1 340px; min-width: 0">
-<h2 style="margin: 0 0 16px; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 36px; color: #2E2018">Visit us</h2>
-<p style="margin: 0 0 6px; font-size: 17px; font-weight: 600">1188 Wagas St., Tondo, Manila 1012</p>
-<p style="margin: 0 0 18px; font-size: 16px; color: #5A4637">Open every day · [opening hours]</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px">
-
-<span style="background: #F3E7D8; color: #5A3520; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">Dine-in</span>
-
-<span style="background: #F3E7D8; color: #5A3520; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">Takeout</span>
-
-<span style="background: #F3E7D8; color: #5A3520; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">Delivery</span>
-
-<span style="background: #F3E7D8; color: #5A3520; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">In-store pickup</span>
-
-<span style="background: #F3E7D8; color: #5A3520; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">Outdoor seating</span>
-
-</div>
+<section id="visit" class="vs">
+<div class="vs-photo-note">[Your storefront photo goes here]</div>
+<div style="position: relative; max-width: 1120px; margin: 0 auto; padding: 96px 24px">
+<div style="max-width: 460px">
+<h2 style="margin: 0 0 16px; font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 40px; color: #FFFFFF">Visit us</h2>
+<p style="margin: 0 0 6px; font-size: 18px; font-weight: 600; color: #FFFFFF">1188 Wagas St., Tondo, Manila 1012</p>
+<p style="margin: 0 0 20px; font-size: 16px; color: #EBDCCB">Open every day · [opening hours]</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px"><span class="vs-chip">Dine-in</span><span class="vs-chip">Takeout</span><span class="vs-chip">Delivery</span><span class="vs-chip">In-store pickup</span><span class="vs-chip">Outdoor seating</span></div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1188+Wagas+St+Tondo+Manila" target="_blank" rel="noopener" style="background: #F3D9B8; color: #2E2018; text-decoration: none; padding: 13px 22px; border-radius: 999px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; margin-bottom: 24px">Get directions</a>
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px">
-<a href="mailto:thecafeniliacoffee@gmail.com">thecafeniliacoffee@gmail.com</a>
-<a href="https://www.instagram.com/thecafenilia">Instagram @thecafenilia</a>
-<a href="https://www.facebook.com/thecafenilia">Facebook /thecafenilia</a>
+<a class="vs-link" href="mailto:thecafeniliacoffee@gmail.com">thecafeniliacoffee@gmail.com</a>
+<a class="vs-link" href="https://www.instagram.com/thecafenilia">Instagram @thecafenilia</a>
+<a class="vs-link" href="https://www.facebook.com/thecafenilia">Facebook /thecafenilia</a>
 </div>
 </div>
-<div style="flex: 1 1 440px; min-width: 0; border-radius: 20px; min-height: 300px; background: #E8D3BA; border: 2px dashed #B98E68; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; box-sizing: border-box; color: #6B4A33; font-size: 15px">[Google Map of 1188 Wagas St.]</div>
 </div>
 </section>
 
@@ -242,6 +248,15 @@ input,select,textarea{font:inherit}
 </div>
 <script>
 document.getElementById('inq').addEventListener('submit',function(e){e.preventDefault();this.hidden=true;document.getElementById('thanks').hidden=false;});
+</script>
+<script>
+(function(){var t=document.getElementById('crTrack'),cards=[].slice.call(t.querySelectorAll('.cr-card')),dots=[].slice.call(document.querySelectorAll('.cr-dot')),prev=document.getElementById('crPrev'),next=document.getElementById('crNext');
+function idx(){var x=t.scrollLeft,best=0,d=1e9;cards.forEach(function(c,i){var k=Math.abs(c.offsetLeft-t.offsetLeft-x);if(k<d){d=k;best=i}});return best}
+function go(i){i=Math.max(0,Math.min(cards.length-1,i));t.scrollTo({left:cards[i].offsetLeft-t.offsetLeft,behavior:'smooth'})}
+function upd(){var i=idx();dots.forEach(function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-current',j===i?'true':'false')});prev.disabled=t.scrollLeft<=2;next.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-2}
+prev.onclick=function(){go(idx()-1)};next.onclick=function(){go(idx()+1)};dots.forEach(function(b,j){b.onclick=function(){go(j)}});
+t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1)}});
+t.addEventListener('scroll',function(){clearTimeout(t._u);t._u=setTimeout(upd,60)});window.addEventListener('resize',upd);upd();})();
 </script>
 </body>
 </html>
